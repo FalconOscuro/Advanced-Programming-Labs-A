@@ -3,7 +3,12 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-    int n = 5;
+    cout << "----Factorial Finder----" << endl;
+    cout << "Input a number: ";
+
+    int n;
+    cin >> n;
+
     int result = 1;
 
     for (int i = 2; i <= n; i++)

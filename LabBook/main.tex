@@ -4,10 +4,10 @@
 \usepackage{subfiles}
 \usepackage{float}
 
-\usepackage{minted}
-\usemintedstyle[C++]{vs}
+\usepackage[outputdir=../build/tex]{minted}
+\usemintedstyle{vs}
 \definecolor{bg}{rgb}{0.95, 0.95, 0.95}
-\setminted[C++]{
+\setminted{
     linenos,
     bgcolor=bg,
     fontsize=\footnotesize
@@ -32,14 +32,18 @@
 \begin{document}
     \maketitle
     \tableofcontents
-    \newpage
 
-    \subfile{01-HelloWorld}
     \newpage
-    \subfile{02-Temperature}
+        \subfile{01-HelloWorld}
     \newpage
-    \subfile{03-Types}
+        \subfile{02-Temperature}
     \newpage
-    \subfile{04-FloatingPointPrecision}
+        \subfile{03-Types}
+    \newpage
+        \subfile{04-FloatingPointPrecision}
+    \newpage
+        \subfile{05-Iteration}
+    \newpage
+        \subfile{06-Average}
 
 \end{document}

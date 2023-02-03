@@ -1,0 +1,30 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+    \section{Iteration}
+        \subsection*{Question:}
+            \begin{minted}[autogobble]{csharp}
+                static void Main(string[] args)
+                {
+                    int factorialNumber = 5;
+                    int factorialTotal = 1;
+
+                    for(int n = 2; n <= factorialNumber; ++n)
+                    {
+                        factorialTotal *= n;
+                    }
+
+                    System.Console.WriteLine(factorialTotal);
+                }
+            \end{minted}
+            Port the above C\# code in to C++ using the provided Main.cpp file.
+            
+        \subsection*{Solution:}
+            \inputminted{cpp}{../05-Iteration/Iteration.cpp}
+
+        \subsection*{Test Data:}
+        
+        \subsection*{Sample Output:}
+
+        \subsection*{Reflection:}
+\end{document}

@@ -30,7 +30,6 @@ int main()
         << endl;
 
     cout << COMPARISON_STREAM((x + y) / x, 1.0 + (y / x));
-    cout << COMPARISON_STREAM(x / y, 1.0);
 
     // Divide by ten until divide by 0 error where y / n = inifinity
     double n = INT64_MAX;

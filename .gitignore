@@ -349,16 +349,18 @@ MigrationBackup/
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
 
-# CMake
+# Build
 CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
-
-# Makefiles
 Makefile
+build/
 
 # Lock Files
 .~lock.*
 
 # VSCode
 .vscode/
+
+# LaTeX
+_minted-main/

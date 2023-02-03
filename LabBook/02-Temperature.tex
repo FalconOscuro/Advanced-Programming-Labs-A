@@ -1,0 +1,73 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+    \section{Temperature}
+        \subsection*{Question:}
+        Write a program to input a Fahrenheit measurement, convert it and output a Celsius value.\\
+        The conversion formula is: \(c = 5 / 9 \times (f - 32)\)
+            
+        \subsection*{Solution:}
+            \inputminted[
+                frame=lines,
+                linenos
+            ]{C++}{../02-Temperature/Temperature.cpp}
+
+        \newpage
+        \subsection*{Test Data:}
+            The program must be able to correctly convert fahrenheit value to celsius,
+            as well as being able to handle unexpected data types.\\
+
+            I have selected a list of data with expected data from \href{https://www.geeksforgeeks.org/fahrenheit-to-celsius-formula/}{geeks for geeks}:
+            \begin{center}
+                \begin{tabular}{|c|c|}
+                    \hline
+                    \textbf{Fahrenheit} & \textbf{Celsius} \\
+                    \hline
+                    0°F & -17.78°C \\
+                    \hline
+                    32°F & 0°C \\
+                    \hline
+                    50°F & 10°C \\
+                    \hline
+                    70°F & 21.11°C \\
+                    \hline
+                    98.6°F & 37°C \\
+                    \hline
+                    104°F & 40°C \\
+                    \hline
+                    140°F & 60°C \\
+                    \hline
+                    212°F & 100°C \\
+                    \hline
+                \end{tabular}
+            \end{center}
+        \subsection*{Sample Output:}
+            \begin{center}
+                \begin{tabular}{|c|c|}
+                    \hline
+                    \textbf{Input} & \textbf{Output} \\
+                    \hline
+                    0°F & -17.7778°C \\
+                    \hline
+                    32°F & 0°C \\
+                    \hline
+                    50°F & 10°C \\
+                    \hline
+                    70°F & 21.1111°C \\
+                    \hline
+                    98.6°F & 37°C \\
+                    \hline
+                    104°F & 40°C \\
+                    \hline
+                    140°F & 60°C \\
+                    \hline
+                    212°F & 100°C \\
+                    \hline
+                    \textit{invalid string} & Error \\
+                    \hline
+                \end{tabular}
+            \end{center}
+
+        \subsection*{Reflection:}
+            The program passed all tests and worked as expected.
+\end{document}

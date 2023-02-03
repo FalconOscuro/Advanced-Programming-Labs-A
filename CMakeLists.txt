@@ -1,12 +1,45 @@
-cmake_minimum_required(VERSION 3.22)
-
 project(LabA LANGUAGES CXX)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+cmake_minimum_required(VERSION 3.16)
 
+# Build all binaries to the /bin directory
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/bin")
+
+# Lab files
 add_executable(HelloWorld ./01-HelloWorld/HelloWorld.cpp)
 add_executable(Temperature ./02-Temperature/Temperature.cpp)
 add_executable(Types ./03-Types/Types.cpp)
 add_executable(FloatingPointPrecision ./04-FloatingPointPrecision/FloatingPointPrecision.cpp)
 add_executable(Iteration ./05-Iteration/Iteration.cpp)
 add_executable(Average ./06-Average/Average.cpp)
+
+# Lab Book using LaTeX
+find_package(LATEX)
+set(LT_OUT_DIR "${CMAKE_SOURCE_DIR}/build/tex")
+set(LT_WORKING_DIR "${CMAKE_SOURCE_DIR}/LabBook")
+set(MAIN_TEX "${LT_WORKING_DIR}/main.tex")
+
+if(LATEX_FOUND AND LATEX_PDFLATEX_FOUND)
+    file(MAKE_DIRECTORY ${LT_OUT_DIR})
+
+    # First Pass
+    add_custom_target( latex-prebuild
+                        COMMAND ${PDFLATEX_COMPILER} -output-directory ${LT_OUT_DIR} -draftmode -shell-escape -interaction=nonstopmode ${MAIN_TEX}
+                        COMMENT "Starting Prebuild..."
+                        WORKING_DIRECTORY ${LT_WORKING_DIR}
+                        DEPENDS ${MAIN_TEX}
+                )
+
+    # Second Pass, generating final pdf
+    add_custom_target( latex-pdf
+                        COMMAND ${PDFLATEX_COMPILER} -output-directory ${LT_OUT_DIR} -shell-escape ${MAIN_TEX}
+                        COMMENT "Starting Final Build..."
+                        WORKING_DIRECTORY ${LT_WORKING_DIR}
+                        DEPENDS ${MAIN_TEX}
+                )
+    
+    add_custom_target(all-formats ALL) # Entry point for execution
+    add_dependencies(all-formats latex-pdf)
+else()
+    message("LaTeX tools not found, unable to build tex files")
+endif()

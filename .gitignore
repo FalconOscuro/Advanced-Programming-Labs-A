@@ -359,3 +359,6 @@ Makefile
 
 # Lock Files
 .~lock.*
+
+# VSCode
+.vscode/

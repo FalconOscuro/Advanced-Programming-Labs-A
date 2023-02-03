@@ -1,44 +1,34 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
-/// @brief Returns formatted string displaying the size of type T
-/// @param tName Name associated to type T
-template <typename T>
-const string GetSizeString(const string tName)
-{    
-    return string("Type " + tName + " has size " + to_string(sizeof(T)));
-}
+// Gives a stream describing the size of the given type
+#define SIZESTREAM(type)                                            \
+    "Type " << setw(22) << setfill(' ') << #type << " has size: "   \
+    << right << setw(2) << setfill('0') << sizeof(type) << endl
 
-/* 
-* Macro shortening GetSizeString automatically converting the type to a string as an argument
-* then printing returned string
-*/
-#define PRINTSIZE(type) cout << GetSizeString<type>(#type) << endl;
-
-/*
-* Above macro repeated for both signed and unsgned types
-*/
-#define PRINTSIZE_US(type) PRINTSIZE(type) PRINTSIZE(unsigned type)
+// Repeats above macro for both signed and unsigned types
+#define SIZESTREAM_US(type) SIZESTREAM(type) << SIZESTREAM(unsigned type)
 
 int main()
 {
     // bool
-    PRINTSIZE(bool);
+    cout << SIZESTREAM(bool);
 
     // character types
-    PRINTSIZE_US(char);
-    PRINTSIZE(char16_t);
-    PRINTSIZE(char32_t);
+    cout << SIZESTREAM_US(char);
+    cout << SIZESTREAM(char16_t);
+    cout << SIZESTREAM(char32_t);
 
     // floating point
-    PRINTSIZE(float);
-    PRINTSIZE(double);
-    PRINTSIZE(long double);
+    cout << SIZESTREAM(float);
+    cout << SIZESTREAM(double);
+    cout << SIZESTREAM(long double);
 
     // integer
-    PRINTSIZE_US(short int);
-    PRINTSIZE_US(int);
-    PRINTSIZE_US(long int);
-    PRINTSIZE_US(long long int);
+    cout << SIZESTREAM_US(short int);
+    cout << SIZESTREAM_US(int);
+    cout << SIZESTREAM_US(long int);
+    cout << SIZESTREAM_US(long long int);
 }

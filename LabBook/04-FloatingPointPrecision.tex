@@ -1,0 +1,64 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+    \section{Floating Point Precision}
+        \subsection*{Question:}
+            Compare the results of mathematical operations on floating point numbers
+            to demonstrate how their precision affects their reliability.
+            
+        \subsection*{Solution:}
+            \inputminted{C++}{../04-FloatingPointPrecision/FloatingPointPrecision.cpp}
+
+        \subsection*{Test Data:}
+            The program is set up to use random data, every time it generates a new pair of doubles
+            with 5 decimal places. This isn't parsed so there is a very small chance of a divide by zero error.\\
+        
+        \subsection*{Sample Output:}
+            \begin{table}[H]
+                \begin{center}
+                    \caption{\textcolor{gray}{Test 1}}
+                    \begin{tabular}{c c}
+                        \hline
+                        \(x\) & \(5895.137240\) \\
+                        \(y\) & \(16612.894100\) \\
+                        \hline
+                        \hline
+                        \((x + y) / x\) & \(3.8180674043137292628\) \\
+                        \(1 + (y / x)\) & \(3.8180674043137292628\) \\
+                        \multicolumn{2}{c}{\textcolor{gray}{\((x + y) / x = 1 + ( y / x)\)}} \\
+                        \hline
+                        \hline
+                        \multicolumn{2}{c}{\textcolor{gray}{Divide By Zero Limit}} \\
+                        \(y\) & \(9.2 \times 10^{-305}\) \\
+                        \(x\) & \(9.2 \times 10^{-306}\) \\
+                        \hline
+                    \end{tabular}
+                \end{center}
+            \end{table}
+            
+            \begin{table}[H]
+                \begin{center}
+                    \caption{\textcolor{gray}{Test 2}}
+                    \begin{tabular}{c c}
+                        \hline
+                        \(x\) & \(9344.961280\) \\
+                        \(y\) & \(10331.761100\) \\
+                        \hline
+                        \hline
+                        \((x + y) / x\) & \(2.1055969939770577959\) \\
+                        \(1 + (y / x)\) & \(2.10559699397705824\) \\
+                        \multicolumn{2}{c}{\textcolor{gray}{\((x + y) / x != 1 + ( y / x)\)}} \\
+                        \hline
+                        \hline
+                        \multicolumn{2}{c}{\textcolor{gray}{Divide By Zero Limit}} \\
+                        \(y\) & \(9.2 \times 10^{-306}\) \\
+                        \(x\) & \(9.2 \times 10^{-306}\) \\
+                        \hline
+                    \end{tabular}
+                \end{center}
+            \end{table}
+
+
+        \subsection*{Reflection:}
+            The in-accuracy from floating point numbers can often result in FINISH THIS.
+\end{document}

@@ -1,11 +1,25 @@
 \documentclass{article}
 
+\usepackage{xcolor}
+\usepackage{subfiles}
+\usepackage{float}
+
 \usepackage{minted}
 \usemintedstyle[C++]{vs}
+\definecolor{bg}{rgb}{0.95, 0.95, 0.95}
+\setminted[C++]{
+    linenos,
+    bgcolor=bg,
+    fontsize=\footnotesize
+}
 
-\usepackage{subfiles}
 \usepackage{hyperref}
-\usepackage{xcolor}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=cyan
+}
+\urlstyle{same}
 
 \title{%
     500083 Lab Book \\
@@ -17,10 +31,15 @@
 % Comments!
 \begin{document}
     \maketitle
+    \tableofcontents
+    \newpage
 
     \subfile{01-HelloWorld}
+    \newpage
     \subfile{02-Temperature}
     \newpage
     \subfile{03-Types}
+    \newpage
+    \subfile{04-FloatingPointPrecision}
 
 \end{document}

@@ -15,7 +15,8 @@ using namespace std;
     << "b = " << setw(w) << #b << " = " << b << "\n"                \
     << "a and b are " << ((a == b) ? "" : "not ") << "identical.\n" << endl
 
-#define COMPARISON_STREAM(a, b) FORMAT_COMPARISON_STREAM(a, b, max(strlen(#a), strlen(#b)))
+#define COMPARISON_STREAM(a, b) \
+    FORMAT_COMPARISON_STREAM(a, b, max(strlen(#a), strlen(#b)))
 
 int main()
 {
@@ -35,11 +36,13 @@ int main()
     double n = INT64_MAX;
     while(y / n != numeric_limits<double>::infinity())
         n /= 10;
-    cout << setprecision(6) << "Divde by zero error for y / n at n = " << n << endl;
+    cout << setprecision(6) << "Divde by zero error for y / n at n = " << n 
+        << endl;
 
     // Repeat for x
     n = INT64_MAX;
     while(x / n != numeric_limits<double>::infinity())
         n /= 10;
-    cout << setprecision(6) << "Divde by zero error for x / n at n = " << n << endl;
+    cout << setprecision(6) << "Divde by zero error for x / n at n = " << n 
+        << endl;
 }

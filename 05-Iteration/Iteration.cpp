@@ -22,9 +22,9 @@ int main(int argc, char* argv[])
 
     int n = ParseInput<int>("Input a number: ");
 
-    int result = 1;
+    unsigned long int result = 1;
     for (int i = 2; i <= n; i++)
         result *= i;
-    
+
     cout << "The factorial of " << n << " is " << result << endl;
 }

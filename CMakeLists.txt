@@ -1,9 +1,9 @@
-project(LabA LANGUAGES CXX)
+project(Lab-A LANGUAGES CXX)
 
 cmake_minimum_required(VERSION 3.16)
 
 # Build all binaries to the /bin directory
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/build/bin")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/build/bin")
 
 # Lab files
 add_executable(HelloWorld ./01-HelloWorld/HelloWorld.cpp)
@@ -15,9 +15,9 @@ add_executable(Average ./06-Average/Average.cpp)
 
 # Lab Book using LaTeX
 find_package(LATEX)
-set(LT_OUT_DIR "${CMAKE_SOURCE_DIR}/build/tex")
+set(LT_OUT_DIR "${CMAKE_BINARY_DIR}/build/tex")
 set(LT_WORKING_DIR "${CMAKE_SOURCE_DIR}/LabBook")
-set(MAIN_TEX "${LT_WORKING_DIR}/main.tex")
+set(MAIN_TEX "${LT_WORKING_DIR}/Lab-A.tex")
 
 if(LATEX_FOUND AND LATEX_PDFLATEX_FOUND)
     file(MAKE_DIRECTORY ${LT_OUT_DIR})

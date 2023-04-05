@@ -2,20 +2,17 @@
 
 \begin{document}
     \section{Temperature}
-        \subsection*{Question:}
-        Write a program to input a Fahrenheit measurement, convert it and output a Celsius value.\\
+        \subsection{Question}
+        Write a program to input a Fahrenheit measurement, convert it, and output a Celsius value.\\
         The conversion formula is: \(c = 5 / 9 \times (f - 32)\)
-            
-        \subsection*{Solution:}
-            \inputminted{cpp}{../Tasks/02-Temperature/Temperature.cpp}
 
-        \newpage
-        \subsection*{Test Data:}
+        \subsection{Test Data}
             The program must be able to correctly convert fahrenheit value to celsius,
             as well as being able to handle unexpected data types.\\
 
             I have selected a list of data with expected output from \href{https://www.geeksforgeeks.org/fahrenheit-to-celsius-formula/}{geeks for geeks}:
-            \begin{center}
+            \begin{table}[H]
+                \centering
                 \begin{tabular}{c c}
                     \hline
                     \textbf{Fahrenheit} & \textbf{Celsius} \\
@@ -30,9 +27,11 @@
                     212°F & 100°C \\
                     \hline
                 \end{tabular}
-            \end{center}
-        \subsection*{Sample Output:}
-            \begin{center}
+                \caption{Test Data}
+            \end{table}
+        \subsection{Sample Output}
+            \begin{table}[H]
+                \centering
                 \begin{tabular}{c c}
                     \hline
                     \textbf{Input} & \textbf{Output} \\
@@ -48,8 +47,15 @@
                     \textit{invalid string} & Error \\
                     \hline
                 \end{tabular}
-            \end{center}
+                \caption{Program Output}
+            \end{table}
 
-        \subsection*{Reflection:}
+        \subsection{Reflection}
             The program passed all tests and works as intended.
+        
+        \subsection{Solution}
+            \begin{listing}[!ht]
+                \inputminted[firstline=6]{cpp}{../Tasks/02-Temperature/Temperature.cpp}
+                \caption{Temparature.cpp}
+            \end{listing}
 \end{document}

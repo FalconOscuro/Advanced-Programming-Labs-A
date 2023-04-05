@@ -2,18 +2,16 @@
 
 \begin{document}
     \section{Types}
-        \subsection*{Question:}
-            Using the “Hello World” program as a starting point, 
-            write a program that prints out the size in bytes of each of the fundamental data types in C++.
-            
-        \subsection*{Solution:}
-            \inputminted{cpp}{../Tasks/03-Types/Types.cpp}
+        \subsection{Question:}
+            Using the \textit{“Hello World”} program as a starting point, 
+            write a program that prints out the size in bytes of each of the fundamental data types in \textit{C++}.
 
-        \subsection*{Test Data:}
+        \subsection{Test Data:}
             This program doesn't require any input data.
         
-        \subsection*{Sample Output:}
-            \begin{center}
+        \subsection{Sample Output:}
+            \begin{table}[H]
+                \centering
                 \begin{tabular}{c c}
                     \hline
                     \textbf{Type} & \textbf{Size (bytes)} \\
@@ -38,13 +36,21 @@
                     unsigned long int & 8 \\
                     long long int & 8 \\
                     unsigned long long int & 8 \\
+                    \hline
                 \end{tabular}
-            \end{center}
+                \caption{Type sizes in bytes}
+            \end{table}
 
-        \subsection*{Reflection:}
+        \subsection{Reflection:}
             Unsigned and signed variables have the same size as expected,
             the largest base data type is a \textit{long double} and of note is that
             \textit{long int} and \textit{long long int} have the same size.
-            I presume this is either an artifact of the inherent backwards compatibility of C++,
-            a result of my compiler setup \& arguments or a combination of the two. 
+            I presume this is either an artifact of the inherent backwards compatibility of \textit{C++},
+            a result of my compiler setup \& arguments or a combination of the two.
+
+        \subsection{Solution:}
+            \begin{listing}[!ht]
+                \inputminted[firstline=6]{cpp}{../Tasks/03-Types/Types.cpp}
+                \caption{Types.cpp}
+            \end{listing}
 \end{document}

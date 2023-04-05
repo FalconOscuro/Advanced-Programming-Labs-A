@@ -3,6 +3,10 @@
 
 using namespace std;
 
+/// @brief Loops until input is accepted
+/// @tparam T input type
+/// @param msg Message posted when requesting input
+/// @return parsed input
 template <typename T> T ParseInput(const char* msg)
 {
     T out;

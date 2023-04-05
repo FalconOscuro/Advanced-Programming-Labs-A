@@ -15,6 +15,7 @@ using namespace std;
     << "b = " << setw(w) << #b << " = " << b << "\n"                \
     << "a and b are " << ((a == b) ? "" : "not ") << "identical.\n" << endl
 
+// Automatically formats by finding maximum string length
 #define COMPARISON_STREAM(a, b) \
     FORMAT_COMPARISON_STREAM(a, b, max(strlen(#a), strlen(#b)))
 

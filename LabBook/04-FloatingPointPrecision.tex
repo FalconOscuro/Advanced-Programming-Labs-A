@@ -8,7 +8,7 @@
 
         \subsection{Test Data}
             The program is set up to use random data, every time it generates a new pair of doubles
-            with 5 decimal places. This isn't parsed so there is a very small chance of a divide by zero error.\\
+            with 5 decimal places. This is not parsed, leaving a small chance for a divide by zero error.\\
         
         \subsection{Sample Output}
             \begin{table}[H]
@@ -60,11 +60,10 @@
             \end{table}
 
         \subsection{Reflection}
-            Floating point numbers are innately innacurate due to the constraints of binary and memory.
-            Throughout division and multiplication, the in-accuracies end up being emphasized. As seen in
-            test 2 the difference is less than 1\% between the output and expected value, whilst mostly insignificant,
-            this tiny difference will be noticed by the language. 
-
+            Floating point numbers are innately innacurate due to memory limitations and binary representation.
+            Throughout division and multiplication, the in-accuracies are emphasized. As seen in
+            test 2, the difference is less than 1\% between the output and expected value. Whilst minute,
+            this tiny differnece can be noticed by a strict, logical comparison. 
         \subsection{Solution}
             \begin{listing}[H]
                 \inputminted[firstline=10]{cpp}{../Tasks/04-FloatingPointPrecision/FloatingPointPrecision.cpp}

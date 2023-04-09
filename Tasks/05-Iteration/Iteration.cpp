@@ -20,7 +20,7 @@ template <typename T> T ParseInput(const char* msg)
     return out;
 }
 
-int main(int argc, char* argv[])
+int main()
 {
     cout << "----Factorial Finder----" << endl;
 

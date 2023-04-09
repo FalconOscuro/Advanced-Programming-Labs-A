@@ -5,6 +5,8 @@ cmake_minimum_required(VERSION 3.16)
 # Build all binaries to the /bin directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 MACRO(SUBDIRLIST result curdir)
   FILE(GLOB children RELATIVE ${curdir} ${curdir}/*)
   SET(dirlist "")
@@ -26,6 +28,7 @@ foreach(subdir ${SUBDIRS})
 
     file(GLOB src_files "${TASK_DIR}/${subdir}/*.cpp")
     add_executable(${subdir} ${src_files})
+    target_compile_options(${subdir} PRIVATE -Werror -Wall -Wextra)
 endforeach()
 
 option(BUILD_LABBOOK "Build the labbook" OFF)
@@ -57,6 +60,7 @@ if(BUILD_LABBOOK)
                             DEPENDS ${MAIN_TEX}
                     )
 
+        add_dependencies(latex-pdf latex-prebuild)
         add_custom_target(all-formats ALL) # Entry point for execution
         add_dependencies(all-formats latex-pdf)
     else()

@@ -1,61 +1,57 @@
-\documentclass[main.tex]{subfiles}
+\section{Temperature}
+    \subsection*{Question}
+    Write a program to input a Fahrenheit measurement, convert it, and output a Celsius value.\\
+    The conversion formula is: \(c = 5 / 9 \times (f - 32)\)
 
-\begin{document}
-    \section{Temperature}
-        \subsection{Question}
-        Write a program to input a Fahrenheit measurement, convert it, and output a Celsius value.\\
-        The conversion formula is: \(c = 5 / 9 \times (f - 32)\)
+    \subsection*{Test Data}
+        The program must be able to correctly convert fahrenheit values to celsius,
+        as well as being able to handle unexpected data types.\\
 
-        \subsection{Test Data}
-            The program must be able to correctly convert fahrenheit values to celsius,
-            as well as being able to handle unexpected data types.\\
+        I have selected a list of data with expected output from \href{https://www.geeksforgeeks.org/fahrenheit-to-celsius-formula/}{geeks for geeks}:
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{c c}
+                \hline
+                \textbf{Fahrenheit} & \textbf{Celsius} \\
+                \hline
+                0°F & -17.78°C \\
+                32°F & 0°C \\
+                50°F & 10°C \\
+                70°F & 21.11°C \\
+                98.6°F & 37°C \\
+                104°F & 40°C \\
+                140°F & 60°C \\
+                212°F & 100°C \\
+                \hline
+            \end{tabular}
+            \caption{Test Data}
+        \end{table}
+    \subsection*{Sample Output}
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{c c}
+                \hline
+                \textbf{Input} & \textbf{Output} \\
+                \hline
+                0°F & -17.7778°C \\
+                32°F & 0°C \\
+                50°F & 10°C \\
+                70°F & 21.1111°C \\
+                98.6°F & 37°C \\
+                104°F & 40°C \\
+                140°F & 60°C \\
+                212°F & 100°C \\
+                \textit{invalid string} & Error \\
+                \hline
+            \end{tabular}
+            \caption{Program Output}
+        \end{table}
 
-            I have selected a list of data with expected output from \href{https://www.geeksforgeeks.org/fahrenheit-to-celsius-formula/}{geeks for geeks}:
-            \begin{table}[H]
-                \centering
-                \begin{tabular}{c c}
-                    \hline
-                    \textbf{Fahrenheit} & \textbf{Celsius} \\
-                    \hline
-                    0°F & -17.78°C \\
-                    32°F & 0°C \\
-                    50°F & 10°C \\
-                    70°F & 21.11°C \\
-                    98.6°F & 37°C \\
-                    104°F & 40°C \\
-                    140°F & 60°C \\
-                    212°F & 100°C \\
-                    \hline
-                \end{tabular}
-                \caption{Test Data}
-            \end{table}
-        \subsection{Sample Output}
-            \begin{table}[H]
-                \centering
-                \begin{tabular}{c c}
-                    \hline
-                    \textbf{Input} & \textbf{Output} \\
-                    \hline
-                    0°F & -17.7778°C \\
-                    32°F & 0°C \\
-                    50°F & 10°C \\
-                    70°F & 21.1111°C \\
-                    98.6°F & 37°C \\
-                    104°F & 40°C \\
-                    140°F & 60°C \\
-                    212°F & 100°C \\
-                    \textit{invalid string} & Error \\
-                    \hline
-                \end{tabular}
-                \caption{Program Output}
-            \end{table}
-
-        \subsection{Reflection}
-            The program passed all tests and works as intended.
+    \subsection*{Reflection}
+        The program passed all tests and works as intended.
         
-        \subsection{Solution}
-            \begin{listing}[!ht]
-                \inputminted[firstline=6]{cpp}{../Tasks/02-Temperature/Temperature.cpp}
-                \caption{Temparature.cpp}
-            \end{listing}
-\end{document}
+    \subsection*{Solution}
+        \begin{listing}[H]
+            \inputminted[firstline=6]{cpp}{../Tasks/02-Temperature/Temperature.cpp}
+            \caption{Temparature.cpp}
+        \end{listing}

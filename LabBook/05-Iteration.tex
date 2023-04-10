@@ -1,60 +1,56 @@
-\documentclass[main.tex]{subfiles}
+\section{Iteration}
+    \subsection*{Question}
+    Port the below \textit{C\#} code into \textit{C++} using the provided \textit{Main.cpp} file:
+        \begin{listing}[H]
+            \begin{minted}[autogobble]{csharp}
+                static void Main(string[] args)
+                {
+                    int factorialNumber = 5;
+                    int factorialTotal = 1;
 
-\begin{document}
-    \section{Iteration}
-        \subsection{Question}
-        Port the below \textit{C\#} code into \textit{C++} using the provided \textit{Main.cpp} file:
-            \begin{listing}[H]
-                \begin{minted}[autogobble]{csharp}
-                    static void Main(string[] args)
+                    for(int n = 2; n <= factorialNumber; ++n)
                     {
-                        int factorialNumber = 5;
-                        int factorialTotal = 1;
-
-                        for(int n = 2; n <= factorialNumber; ++n)
-                        {
-                            factorialTotal *= n;
-                        }
-
-                        System.Console.WriteLine(factorialTotal);
+                        factorialTotal *= n;
                     }
-                \end{minted}
-                \caption{Source as \textit{C\#}}
-            \end{listing}
 
-        \subsection{Test Data}
-            \begin{table}[H]
-                \centering
-                \begin{tabular}{c c}
-                    \hline
-                    \textbf{Input} & \textbf{Expected Output} \\
-                    \hline
-                    5 & 120 \\
-                    \hline
-                \end{tabular}
-                \caption{Test data}
-            \end{table}
-        
-        \subsection{Sample Output}
-            \begin{table}[H]
-                \centering
-                \begin{tabular}{c c}
-                    \hline
-                    \textbf{Input} & \textbf{Output} \\
-                    \hline
-                    5 & 120 \\
-                    \hline
-                \end{tabular}
-                \caption{Output using test data}
-            \end{table}
+                    System.Console.WriteLine(factorialTotal);
+                }
+            \end{minted}
+            \caption{Source as \textit{C\#}}
+        \end{listing}
 
-        \subsection{Reflection}
-            Program works as intended but is more verbose, mainly due to the extra functionality
-            of user input and parsing.
+    \subsection*{Test Data}
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{c c}
+                \hline
+                \textbf{Input} & \textbf{Expected Output} \\
+                \hline
+                5 & 120 \\
+                \hline
+            \end{tabular}
+            \caption{Test data}
+        \end{table}
         
-        \subsection{Solution}
-            \begin{listing}[H]
-                \inputminted{cpp}{../Tasks/05-Iteration/Iteration.cpp}
-                \caption{Iteration.cpp}
-            \end{listing}
-\end{document}
+    \subsection*{Sample Output}
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{c c}
+                \hline
+                \textbf{Input} & \textbf{Output} \\
+                \hline
+                5 & 120 \\
+                \hline
+            \end{tabular}
+            \caption{Output using test data}
+        \end{table}
+
+    \subsection*{Reflection}
+        Program works as intended but is more verbose, mainly due to the extra functionality
+        of user input and parsing.
+        
+    \subsection*{Solution}
+        \begin{listing}[H]
+            \inputminted{cpp}{../Tasks/05-Iteration/Iteration.cpp}
+            \caption{Iteration.cpp}
+        \end{listing}

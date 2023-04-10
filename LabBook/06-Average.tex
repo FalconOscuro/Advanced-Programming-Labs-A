@@ -1,38 +1,32 @@
-\documentclass[main.tex]{subfiles}
-
-\begin{document}
-    \section{Average}
-        \subsection{Question}
-        Using a while loop (or do-while loop), calculate the average value of values provided by the user from the console (cin).
-        You should calculate the average after the user either enters a negative number or the user enters a non-number value (e.g. a letter).
+\section{Average}
+    \subsection*{Question}
+    Using a while loop (or do-while loop), calculate the average value of values provided by the user from the console (cin).
+    You should calculate the average after the user either enters a negative number or the user enters a non-number value (e.g. a letter).
             
-        \subsection{Test Data}
-            None.
+    \subsection*{Test Data}
+        None.
         
-        \subsection{Sample Output}
-            \begin{table}[H]
-                \centering
-                \begin{tabular}{c c}
-                    \hline
-                    \textbf{Input} & \textbf{Output} \\
-                    \hline
-                    20, 50, 60, 77, 79 & 57.2 \\
-                    \hline
-                \end{tabular}
-                \caption{Data output}
-            \end{table}
+    \subsection*{Sample Output}
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{c c}
+                \hline
+                \textbf{Input} & \textbf{Output} \\
+                \hline
+                20, 50, 60, 77, 79 & 57.2 \\
+                \hline
+            \end{tabular}
+            \caption{Data output}
+        \end{table}
 
-        \subsection{Reflection}
-            Managed to greatly shorten the length of the program as parsing can
-            be entirely integrated into the conditional of the for loop.
-            This greatly reduces the readability of the code, arguably making it worse,
-            but was interesting to explore.
+    \subsection*{Reflection}
+        Managed to greatly shorten the length of the program as parsing can
+        be entirely integrated into the conditional of the for loop.
+        This greatly reduces the readability of the code, arguably making it worse,
+        but was interesting to explore.
         
-        \subsection{Solution}
-            \begin{listing}[H]
-                \inputminted{cpp}{../Tasks/06-Average/Average.cpp}%CPP file path here
-                \caption{Average.cpp}
-            \end{listing}
-
-
-\end{document}
+    \subsection*{Solution}
+        \begin{listing}[H]
+            \inputminted{cpp}{../Tasks/06-Average/Average.cpp}%CPP file path here
+            \caption{Average.cpp}
+        \end{listing}

@@ -1,10 +1,10 @@
 \documentclass{article}
 
 \usepackage{xcolor}
-\usepackage{subfiles}
+\usepackage{import}
 \usepackage{float}
 
-\usepackage[outputdir=../build/tex]{minted}
+\usepackage[outputdir=../build/LabBook]{minted}
 \usemintedstyle{vs}
 \definecolor{bg}{rgb}{0.95, 0.95, 0.95}
 \setminted{
@@ -14,6 +14,15 @@
     frame=lines,
     framesep=2mm
 }
+
+\usepackage{xpatch}
+
+\makeatletter
+\xpatchcmd\inputminted
+  {#3}
+  {\import@path #3}
+  {}{\fail}
+\makeatother
 
 \usepackage{hyperref}
 \hypersetup{
@@ -30,22 +39,10 @@
 
 \author{Peter Garrod}
 
-% Comments!
 \begin{document}
     \maketitle
     \tableofcontents
+    \newpage
 
-    \newpage
-        \subfile{01-HelloWorld}
-    \newpage
-        \subfile{02-Temperature}
-    \newpage
-        \subfile{03-Types}
-    \newpage
-        \subfile{04-FloatingPointPrecision}
-    \newpage
-        \subfile{05-Iteration}
-    \newpage
-        \subfile{06-Average}
-
+    \import{./}{Header}
 \end{document}

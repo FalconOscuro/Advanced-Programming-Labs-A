@@ -1,56 +1,52 @@
-\documentclass[main.tex]{subfiles}
+\section{Types}
+    \subsection*{Question:}
+        Using the \textit{“Hello World”} program as a starting point, 
+        write a program that prints out the size in bytes of each of the fundamental data types in \textit{C++}.
 
-\begin{document}
-    \section{Types}
-        \subsection{Question:}
-            Using the \textit{“Hello World”} program as a starting point, 
-            write a program that prints out the size in bytes of each of the fundamental data types in \textit{C++}.
-
-        \subsection{Test Data:}
-            This program doesn't require any input data.
+    \subsection*{Test Data:}
+        This program doesn't require any input data.
         
-        \subsection{Sample Output:}
-            \begin{table}[H]
-                \centering
-                \begin{tabular}{c c}
-                    \hline
-                    \textbf{Type} & \textbf{Size (bytes)} \\
-                    \hline
-                    \multicolumn{2}{c}{\textcolor{gray}{boolean}} \\
-                    bool & 1 \\
-                    \multicolumn{2}{c}{\textcolor{gray}{character}} \\
-                    char & 1 \\
-                    unsigned char & 1 \\
-                    char16\_t & 2 \\
-                    char32\_t & 4 \\
-                    \multicolumn{2}{c}{\textcolor{gray}{Floating Point}} \\
-                    float & 4 \\
-                    double & 8 \\
-                    long double & 16 \\
-                    \multicolumn{2}{c}{\textcolor{gray}{Integer}} \\
-                    short int & 2 \\
-                    unsigned short int & 2 \\
-                    int & 4 \\
-                    unsigned int & 4 \\
-                    long int & 8 \\
-                    unsigned long int & 8 \\
-                    long long int & 8 \\
-                    unsigned long long int & 8 \\
-                    \hline
-                \end{tabular}
-                \caption{Type sizes in bytes}
-            \end{table}
+    \subsection*{Sample Output:}
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{c c}
+                \hline
+                \textbf{Type} & \textbf{Size (bytes)} \\
+                \hline
+                \multicolumn{2}{c}{\textcolor{gray}{boolean}} \\
+                bool & 1 \\
+                \multicolumn{2}{c}{\textcolor{gray}{character}} \\
+                char & 1 \\
+                unsigned char & 1 \\
+                char16\_t & 2 \\
+                char32\_t & 4 \\
+                \multicolumn{2}{c}{\textcolor{gray}{Floating Point}} \\
+                float & 4 \\
+                double & 8 \\
+                long double & 16 \\
+                \multicolumn{2}{c}{\textcolor{gray}{Integer}} \\
+                short int & 2 \\
+                unsigned short int & 2 \\
+                int & 4 \\
+                unsigned int & 4 \\
+                long int & 8 \\
+                unsigned long int & 8 \\
+                long long int & 8 \\
+                unsigned long long int & 8 \\
+                \hline
+            \end{tabular}
+            \caption{Type sizes in bytes}
+        \end{table}
 
-        \subsection{Reflection:}
-            Unsigned and signed variables have the same size as expected, with
-            the largest base data type being a \textit{long double}.
-            Something of note is that \textit{long int} and \textit{long long int} have the same size.
-            I presume this is either an artifact of the inherent backwards compatibility of \textit{C++},
-            the build setup or a combination of the two.
+    \subsection*{Reflection:}
+        Unsigned and signed variables have the same size as expected, with
+        the largest base data type being a \textit{long double}.
+        Something of note is that \textit{long int} and \textit{long long int} have the same size.
+        I presume this is either an artifact of the inherent backwards compatibility of \textit{C++},
+        the build setup or a combination of the two.
 
-        \subsection{Solution:}
-            \begin{listing}[!ht]
-                \inputminted[firstline=6]{cpp}{../Tasks/03-Types/Types.cpp}
-                \caption{Types.cpp}
-            \end{listing}
-\end{document}
+    \subsection*{Solution:}
+        \begin{listing}[H]
+            \inputminted[firstline=6]{cpp}{../Tasks/03-Types/Types.cpp}
+            \caption{Types.cpp}
+        \end{listing}
